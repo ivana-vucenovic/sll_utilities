@@ -1,4 +1,3 @@
-# Add a method contains(value) to your SLL class, which is given a value as a parameter.  Return a boolean (true/false); true, if the list possesses a node that contains the provided value.
 
 class Node:
     def __init__(self, value):
@@ -16,25 +15,16 @@ class SLL:
         self.head = new_node
         return self
 
+# Add a method contains(value) to your SLL class, which is given a value as a parameter.  Return a boolean (true/false); true, if the list possesses a node that contains the provided value.
+
     def contains(self, value):
         runner = self.head
         while runner != None:
             if runner.value == value:
                 return True
             runner = runner.next
-            return False
-        return self
+        return False
 
-# contains(value) {
-#         var runner = this.head;
-#         while(runner) {
-#             if(runner.value === value) {
-#                 return true;
-#             }
-#             runner = runner.next;
-#         }
-#         return false;
-#     }
     # Create a new SLL method length() that returns number of nodes in that list.
     def length(self):
         count = 0
@@ -45,18 +35,17 @@ class SLL:
         print(count)
         return self
         
-
-
     # Create display() that returns a string containing all list values. Build what you wish console.log(myList) did!
+
     def display(self):
         if self.head == None:
             print("No values")
         else:
             runner = self.head
-            myList = []
+            myList = ""
             while runner != None:
-                print(runner.value)
-                # myList.append(runner.value)
+                myList += str(runner.value) + ", "
+                print(myList)
                 runner = runner.next
         return self
 
@@ -66,8 +55,7 @@ sll.addFront(8)
 sll.addFront(2)
 sll.addFront(6)
 
-# sll.printVals()
-sll.contains(4)
+print(sll.contains(7))
 sll.length()
 sll.display()
 
